@@ -14,8 +14,8 @@ def test_proxy(proxy):
         start = time.time()
         s = socks.socksocket()
         s.settimeout(1)
-        ip = proxy.split(" ")[0]
-        port = int(proxy.split(" ")[1])
+        ip = proxy.split(":")[0]
+        port = int(proxy.split(":")[1])
         s.set_proxy(socks.SOCKS5, ip, port)
         s.connect(("www.google.com", 80))
         end = time.time()
